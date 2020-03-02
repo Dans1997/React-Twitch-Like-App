@@ -16,7 +16,7 @@ const Header = () => {
                 <Button key="1">      
                     <Link to="/">Streams</Link>
                 </Button>,
-                <GoogleAuth />
+                <GoogleAuth key="2"/>
             ]}
             >
             </PageHeader>
