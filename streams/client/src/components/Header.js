@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { PageHeader, Button } from 'antd';
 
+import GoogleAuth from './GoogleAuth';
 import './Header.css'
 
 const Header = () => {
@@ -12,12 +13,10 @@ const Header = () => {
             title="Streamy"
             subTitle="Welcome!"
             extra={[
-                <Button key="2">      
+                <Button key="1">      
                     <Link to="/">Streams</Link>
                 </Button>,
-                <Button key="1" type="primary">
-                    <Link to="/">Login</Link>
-                </Button>
+                <GoogleAuth />
             ]}
             >
             </PageHeader>
