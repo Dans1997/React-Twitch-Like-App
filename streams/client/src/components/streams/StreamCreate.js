@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Form, Button, Checkbox } from 'antd';
+import { Form, Button } from 'antd';
 
 import { createStream } from '../../actions'
 import { connect } from 'react-redux';
