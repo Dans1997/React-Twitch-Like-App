@@ -1,6 +1,9 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Button, Checkbox } from 'antd';
+
+import { createStream } from '../../actions'
+import { connect } from 'react-redux';
 
 const layout = {
     labelCol: { span: 8 },
@@ -19,8 +22,8 @@ class StreamCreate extends React.Component {
         )
     }
 
-    onFinish (formValues) {
-        console.log(formValues)
+    onFinish = (formValues) => {
+        this.props.createStream(formValues)
     }
     
     render (){
@@ -47,10 +50,6 @@ class StreamCreate extends React.Component {
                         <Field name="description" component={this.renderInput}/>
                     </Form.Item>
 
-                    <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-                        <Checkbox>Remember me</Checkbox>
-                    </Form.Item>
-
                     <Form.Item {...tailLayout}>
                     <Button type="primary" htmlType="submit">
                         Submit
@@ -64,6 +63,8 @@ class StreamCreate extends React.Component {
 
 
 
-export default reduxForm({
+const formWrapped = reduxForm({
     form: 'streamCreate'
 })(StreamCreate);
+
+export default connect(null, { createStream })(formWrapped)
