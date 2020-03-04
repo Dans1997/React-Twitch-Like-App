@@ -20,6 +20,12 @@
       "description": "Hi! I'm Dan!",
       "userId": "109046414346924093045",
       "id": 4
+    },
+    {
+      "title": "Programmatic Navigation #1",
+      "description": "Made with 'history.push()'",
+      "userId": "109046414346924093045",
+      "id": 5
     }
   ]
 }
