@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux' ;
 import { fetchStream } from '../../actions'
+import VideoPlayer from '../VideoPlayer';
 
 class StreamShow extends React.Component {
 
@@ -16,6 +17,7 @@ class StreamShow extends React.Component {
 
         return (
             <div style={{ padding: '10px' }}>
+                <VideoPlayer id={this.props.match.params.id}/>
                 <h3>{this.props.stream.title} </h3>
                 <p>{this.props.stream.description} </p>
             </div>
