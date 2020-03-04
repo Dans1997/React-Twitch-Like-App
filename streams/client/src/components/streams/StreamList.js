@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Row, Col, Button, Divider } from 'antd'
+import { Row, Col, Button, Divider, Avatar } from 'antd'
+import { PlaySquareOutlined } from '@ant-design/icons';
 
 import { fetchStreams } from '../../actions';
 
@@ -41,6 +42,7 @@ class StreamList extends React.Component {
                 <Col key={stream.title} className="gutter-row" span={12}>
                     <Row gutter={12}>
                         <Col> <h2>{stream.title}</h2> </Col>
+                        <Col> <Link to={`/streams/show/${stream.id}`}><Avatar icon={<PlaySquareOutlined />} /></Link> </Col>
                     </Row>
                     <Row gutter={12}>
                         <Col > {stream.description} </Col>  
