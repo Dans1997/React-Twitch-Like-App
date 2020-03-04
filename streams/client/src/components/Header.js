@@ -13,9 +13,9 @@ const Header = () => {
             title="Streamy"
             subTitle="Welcome!"
             extra={[
-                <Button key="1">      
-                    <Link to="/">Streams</Link>
-                </Button>,
+                <Link to="/" key="1">      
+                    <Button>Streams</Button>
+                </Link>,
                 <GoogleAuth key="2"/>
             ]}
             >

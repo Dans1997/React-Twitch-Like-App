@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Row, Col, Button } from 'antd'
+import { Row, Col, Button, Divider } from 'antd'
 
 import { fetchStreams } from '../../actions';
 
@@ -46,6 +46,7 @@ class StreamList extends React.Component {
                         <Col > {stream.description} </Col>  
                         <Col > {this.renderAdmin(stream)} </Col>
                     </Row>
+                    <Divider orientation="left" style={{ color: '#333', fontWeight: 'normal' }}/>
                 </Col>
             )
         });
