@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { deleteStream } from '../../actions'
+import {fetchStream, deleteStream } from '../../actions'
 import DeleteModal from '../Modal';
 
 class StreamDelete extends React.Component {
 
     componentDidMount() {
-        // do i need this?
+        this.props.fetchStream(this.props.match.params.id);
     }
 
     onDelete = () => {
@@ -15,14 +15,15 @@ class StreamDelete extends React.Component {
     }
 
     render(){
-        if(!this.props.streamId)
+        if(!this.props.stream)
         {
-            return <div> </div>
+            return <div>Loading...</div>
         }
 
         return (
             <div style={{ padding: '10px' }}>
-                <h3> Delete Stream # { this.props.streamId } </h3> 
+                <h3> Delete Stream # { this.props.match.params.id } </h3> 
+                <p>Title: {this.props.stream.title} </p>
                 <DeleteModal onDelete={this.onDelete}/>
             </div>
         )
@@ -30,7 +31,7 @@ class StreamDelete extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    return { streamId: ownProps.match.params.id }
+    return { stream: state.streams[ownProps.match.params.id] }
 }
 
-export default connect(mapStateToProps, { deleteStream } )(StreamDelete);
+export default connect(mapStateToProps, { deleteStream, fetchStream } )(StreamDelete);
