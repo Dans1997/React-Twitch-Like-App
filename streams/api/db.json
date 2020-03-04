@@ -17,7 +17,7 @@
     },
     {
       "title": "Dan's Stream",
-      "description": "Hi! I'm Dan!",
+      "description": "Hi! I'm Dan! (Edited!)",
       "userId": "109046414346924093045",
       "id": 4
     },
@@ -26,6 +26,12 @@
       "description": "Made with 'history.push()'",
       "userId": "109046414346924093045",
       "id": 5
+    },
+    {
+      "title": "Stream #4",
+      "description": "This is the fourth stream (from the reused code).",
+      "userId": "109046414346924093045",
+      "id": 6
     }
   ]
 }

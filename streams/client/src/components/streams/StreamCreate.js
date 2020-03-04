@@ -1,70 +1,26 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
-import { Form, Button } from 'antd';
-
-import { createStream } from '../../actions'
 import { connect } from 'react-redux';
 
-const layout = {
-    labelCol: { span: 8 },
-    wrapperCol: { span: 16 },
-};
-  
-const tailLayout = {
-    wrapperCol: { offset: 8, span: 16 },
-};
+import { createStream } from '../../actions'
+import StreamForm from './StreamForm'
 
 class StreamCreate extends React.Component {
     
-    renderInput({input}) {
-        return (
-            <input { ...input } />
-        )
-    }
-
     onFinish = (formValues) => {
         this.props.createStream(formValues)
     }
     
-    render (){
+    render () {
         return (
-            <div>
-                <Form onFinish={this.props.handleSubmit(this.onFinish)}
-                {...layout}
-                name="basic"
-                initialValues={{ remember: true }}
-                >
-                    <Form.Item
-                    label="Title"
-                    name="title"
-                    rules={[{ required: true, message: 'Please input a title!'}]}
-                    >
-                        <Field name="title" component={this.renderInput}/>
-                    </Form.Item>
-
-                    <Form.Item
-                    label="Description"
-                    name="description"
-                    rules={[{ required: true, message: 'Please input a description!' }]}
-                    >
-                        <Field name="description" component={this.renderInput}/>
-                    </Form.Item>
-
-                    <Form.Item {...tailLayout}>
-                    <Button type="primary" htmlType="submit">
-                        Submit
-                    </Button>
-                    </Form.Item>
-                </Form>
+            <div style={{padding: '10px'}}>
+                <h3>
+                    Create a Stream
+                </h3>
+                <StreamForm onSubmit={this.onFinish}/>
             </div>
         )
     }
 }
 
 
-
-const formWrapped = reduxForm({
-    form: 'streamCreate'
-})(StreamCreate);
-
-export default connect(null, { createStream })(formWrapped)
+export default connect(null, { createStream })(StreamCreate)
