@@ -16,15 +16,19 @@ class StreamList extends React.Component {
             return (
                 <Row gutter={4}>
                     <Col >
-                        <Button danger size="small">
-                            EDIT
-                        </Button>
+                        <Link to={`/streams/edit/${stream.id}`} >
+                            <Button danger size="small">
+                                EDIT
+                            </Button>
+                        </Link>
                     </Col>
 
                     <Col >
-                        <Button type="primary" danger size="small">
-                            DELETE
-                        </Button>
+                        <Link to={`/streams/delete/${stream.id}`} >
+                            <Button type="primary" danger size="small">
+                                DELETE
+                            </Button>
+                        </Link>
                     </Col>
                 </Row>
             )

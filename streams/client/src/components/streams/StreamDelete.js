@@ -1,7 +1,6 @@
 import React from 'react';
 
-const StreamDelete
- = () => {
+const StreamDelete = () => {
     return (
         <div>
             StreamDelete
