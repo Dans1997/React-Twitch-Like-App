@@ -14,6 +14,12 @@
       "title": "Stream #3",
       "description": "This is the third stream.",
       "id": 3
+    },
+    {
+      "title": "Dan's Stream",
+      "description": "Hi! I'm Dan!",
+      "userId": "109046414346924093045",
+      "id": 4
     }
   ]
 }
